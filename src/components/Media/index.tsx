@@ -1,4 +1,11 @@
 import React from "react";
+import { BsPlayCircle } from "react-icons/bs";
+import {
+  Container,
+  CardContainer,
+  ImgContainer,
+  InfosContainer,
+} from "./styles";
 
 export interface MediaData {
   name: string;
@@ -6,21 +13,26 @@ export interface MediaData {
 }
 
 interface MediaProps {
-  data: MediaData[]
+  data: MediaData[];
 }
 
-const MediaList: React.FC<MediaProps> = ({data}: MediaProps) => {
+const MediaList: React.FC<MediaProps> = ({ data }: MediaProps) => {
   return (
-    <ul>
+    <Container>
       {data.map((media) => {
         return (
-          <>
-            <li>{media.name}</li>
-            <img src={media.imageUrl} alt="Imagem do cartaz do filme" />
-          </>
+          <CardContainer>
+            <ImgContainer src={media.imageUrl} />
+            <InfosContainer>
+              <li>
+                <BsPlayCircle />
+              </li>
+              <li>{media.name}</li>
+            </InfosContainer>
+          </CardContainer>
         );
       })}
-    </ul>
+    </Container>
   );
 };
 

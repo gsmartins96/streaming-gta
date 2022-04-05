@@ -1,55 +1,50 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { Header, Title, Text } from "./styles";
-
-interface Package {
-  name: string;
-  price: number;
-}
+import Plans, { PlansData } from "../../components/CardPlan";
+import { Banner, Title, Subtitle } from "./styles";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
-  const [packages, setPackage] = useState<Package[]>([
+  const plans: PlansData[] = [
     {
-      name: "Package 1",
+      name: "Mensal",
       price: 10,
+      description:
+        "Assista a todos filmes e séries por apenas R$ 10,00 por mês",
     },
     {
-      name: "Package 2",
-      price: 20,
+      name: "Trimestral",
+      price: 25,
+      description: "Assista a todos filmes e séries por apenas R$ 25,00",
     },
     {
-      name: "Package 3",
-      price: 30,
+      name: "Semestral",
+      price: 65,
+      description: "Assista a todos filmes e séries por apenas R$ 65,00",
     },
-  ]);
+    {
+      name: "Anual",
+      price: 125,
+      description: "Assista a todos filmes e séries por apenas R$ 125,00",
+    },
+  ];
 
-  const goToPage = useCallback((path: string) => {
-    navigate(path);
-  }, [navigate]);
+  const goToPage = useCallback(
+    (path: string) => {
+      navigate(path);
+    },
+    [navigate]
+  );
 
   return (
     <div>
-      <Header>
-        <Title>Titulo do Serviço de Stream</Title>
-      </Header>
+      <Banner />
 
-      <h2>Pacotes:</h2>
-      <ul>
-        {packages.map((pack) => {
-          return (
-            <>
-              <Text>Nome: {pack.name}</Text>
-              <Text>R$ {pack.price}</Text>
-            </>
-          );
-        })}
-      </ul>
+      <Title>GloboStreaming</Title>
 
-      <button onClick={() => goToPage('/movies')}>Ver filmes</button>
-      <button onClick={() => goToPage('/series')}>Ver séries</button>
-      <button onClick={() => goToPage('/contact')}>Contatos</button>
+      <Subtitle>Pacotes:</Subtitle>
+      <Plans data={plans} />
     </div>
   );
 };

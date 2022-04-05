@@ -2,29 +2,38 @@ import styled from "styled-components";
 
 const ContactContainer = styled.div`
   display: flex;
+  justify-content: center;
+  flex-direction: row;
+`;
 
+const Title = styled.h1`
+  color: #fff;
+  display: flex;
+  justify-content: center;
 `;
 
 const ContactList = styled.ul`
   list-style: none;
+  display: flex;
+  padding: 0;
 
-  & img{
+  & img {
     width: 20px;
     height: 20px;
   }
 
-  & button{
+  & button {
     border: none;
     background-color: transparent;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     column-gap: 5px;
   }
 
-  & a{
+  & a {
     text-decoration: none;
+    color: #fff;
   }
 `;
 
-export { ContactContainer, ContactList };
+export { ContactContainer, ContactList, Title };

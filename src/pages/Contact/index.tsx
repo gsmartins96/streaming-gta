@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ContactContainer, ContactList } from "./styles";
+import { ContactContainer, ContactList, Title } from "./styles";
 
 interface ContactProps {
   image?: string;
@@ -35,14 +35,19 @@ const Contact: React.FC<ContactProps> = ({
 
   return (
     <>
+      <Title>Entre em contato:</Title>
       <ContactContainer>
         <ContactList>
           {contacts.map((contact) => {
             return (
               <>
-               
                 <li>
-                <button><img src={contact.image} alt="logo redes sociais" /><a href={contact.socialMediaUrl}>{contact.socialMediaName}</a></button>
+                  <button>
+                    <img src={contact.image} alt="logo redes sociais" />
+                    <a href={contact.socialMediaUrl}>
+                      {contact.socialMediaName}
+                    </a>
+                  </button>
                 </li>
               </>
             );
