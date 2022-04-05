@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const dash = keyframes`
+0% {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transform: scale(1);
+}
+
+100% {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  transform: scale(1.1);
+}
+`;
 
 const MenuList = styled.ul`
   margin: 0;
@@ -15,6 +27,12 @@ const MenuListItem = styled.li`
   & a {
     text-decoration: none;
     font-size: 1.2rem;
+  }
+
+  & a:hover {
+    border-bottom: 2px solid #a13333;
+    animation: ${dash} 1s ease 0s 1 normal forwards;
+    width: 20%;
   }
 
   & a:visited {

@@ -25,15 +25,16 @@ const Home: React.FC = () => {
     },
   ]);
 
-  const goToPage = useCallback((path: string) => {
-    navigate(path);
-  }, [navigate]);
+  const goToPage = useCallback(
+    (path: string) => {
+      navigate(path);
+    },
+    [navigate]
+  );
 
   return (
     <div>
-      <Header>
-        <Title>Titulo do Serviço de Stream</Title>
-      </Header>
+      <Title>GloboStreaming</Title>
 
       <h2>Pacotes:</h2>
       <ul>
@@ -47,9 +48,9 @@ const Home: React.FC = () => {
         })}
       </ul>
 
-      <button onClick={() => goToPage('/movies')}>Ver filmes</button>
-      <button onClick={() => goToPage('/series')}>Ver séries</button>
-      <button onClick={() => goToPage('/contact')}>Contatos</button>
+      <button onClick={() => goToPage("/movies")}>Ver filmes</button>
+      <button onClick={() => goToPage("/series")}>Ver séries</button>
+      <button onClick={() => goToPage("/contact")}>Contatos</button>
     </div>
   );
 };
