@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MenuList } from "./styles";
+import { MenuList, MenuListItem } from "./styles";
 
 interface MenuProps {
   name?: string;
@@ -24,15 +24,13 @@ const Header: React.FC<MenuProps> = ({ name, url }) => {
   ]);
 
   return (
-    <div className="header">
-      <MenuList>
-        {menus.map((menu) => (
-          <li>
-            <Link to={menu.url}>{menu.name}</Link>
-          </li>
-        ))}
-      </MenuList>
-    </div>
+    <MenuList>
+      {menus.map((menu) => (
+        <MenuListItem>
+          <Link to={menu.url}>{menu.name}</Link>
+        </MenuListItem>
+      ))}
+    </MenuList>
   );
 };
 
