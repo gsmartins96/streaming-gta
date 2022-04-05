@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ContactContainer, ContactList } from "./styles";
+import { ContactContainer, ContactList, Title } from "./styles";
 
 interface ContactProps {
   image?: string;
@@ -35,6 +35,7 @@ const Contact: React.FC<ContactProps> = ({
 
   return (
     <>
+      <Title>Entre em contato:</Title>
       <ContactContainer>
         <ContactList>
           {contacts.map((contact) => {
