@@ -12,7 +12,7 @@ const dash = keyframes`
 }
 `;
 
-const MenuList = styled.ul`
+export const MenuList = styled.ul`
   margin: 0;
   border-bottom: 1px solid rgba(230, 230, 230, 0.1);
   display: flex;
@@ -20,7 +20,7 @@ const MenuList = styled.ul`
   list-style: none;
 `;
 
-const MenuListItem = styled.li`
+export const MenuListItem = styled.li`
   display: flex;
   padding: 20px;
 
@@ -39,5 +39,3 @@ const MenuListItem = styled.li`
     color: #fff;
   }
 `;
-
-export { MenuList, MenuListItem };
