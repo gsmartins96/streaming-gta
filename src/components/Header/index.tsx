@@ -21,6 +21,10 @@ const Header: React.FC<MenuProps> = ({ name, url }) => {
       name: "Series",
       url: "/series",
     },
+    {
+      name: "Contact",
+      url: "/contact",
+    },
   ]);
 
   return (
